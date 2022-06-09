@@ -23,7 +23,7 @@ public class Shop {
         System.out.print("Quantity: ");
         product.quantity = sc.nextInt();
 
-        System.out.println(product.name + ", " + product.price + ", " + product.quantity);
+        System.out.println(product.toString());
 
         sc.close();
     }
