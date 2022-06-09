@@ -3,15 +3,19 @@ package entities;
 public class Employ {
 
     public String Name;
+    public double grossSalary;
+    public double tax;
 
-    public float grossSalary;
+    public double NetSalary(){
+        return grossSalary - tax;
+    }
 
-    public float tax;
+    public void IncreaseSalary(double percentage){
+        grossSalary += grossSalary * (percentage / 100.00);
+    }
 
-
-
-    public String toStringEmploy() {
-        return "Employee: " + Name + ", $ " + String.format("%.2f", grossSalary);
+    public String toString() {
+        return "Employee: " + Name + ", $ " + String.format("%.2f", NetSalary());
     }
 
 
